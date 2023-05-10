@@ -1,2 +1,26 @@
 Hello World!
 <h1>This is the home page<h1>
+
+<%= link_to 'Sign in with Spotify', '/auth/spotify', method: :post %>
+
+<% RSpotify::authenticate("42b8be05bdd340ebafcf51c008ec44f2", "c1283fa13e9d4d6aa6ddc90012bffe95") %>
+
+<% playlist = RSpotify::Playlist.find('31newtvkxi23gqs46yci5zg4hway', '3VQls4uiXnvDRVWX0XSdTm') %>
+
+<h2>Playlist name:<h2>
+	<%= playlist.name %>
+
+
+<h2>Playlist description:<h2>
+	<%= playlist.description %>
+	
+
+<h2>Number of episodes:<h2>
+	<%= playlist.total %> 
+
+
+<h2>Is this Playlist public?<h2>
+<%= playlist.public %>
+
+
+<%= playlist.tracks %>
